@@ -156,7 +156,7 @@ def handleProxyList(con, proxy_li, proxy_ty):
     return proxies
 
 if __name__ == '__main__':
-    banner("NGL SPAMMER V1")
+    banner("NGL SPAMMER")
     input_username = input(f"{red}[{white}?{red}] {white}Nome utente del target : ")
     input_total_spam = input(f"{red}[{white}?{red}] {white}Numero dei messaggi da spammare : ")
     input_message = input(f"{red}[{white}?{red}] {white}Messaggio : ")
