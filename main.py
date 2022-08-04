@@ -78,8 +78,8 @@ def logTime():
 def banner(str):
     os.system("cls||clear")
     my_banner = pyfiglet.figlet_format(str, font="slant", justify="center")
-    print(red + my_banner)
-    print(f"\t\t\t{red}[ {white}Created By Krypt0n {red}]\n")
+    print(green + my_banner)
+    print(f"\t\t\t{red}[ {white}Created By Dedsec dev team {red}]\n")
 
 def generateDeviceID():
     string = "qwertyuiopasdfghjklzxcvbnm1234567890"
@@ -156,7 +156,7 @@ def handleProxyList(con, proxy_li, proxy_ty):
     return proxies
 
 if __name__ == '__main__':
-    banner("NGL - SPAM")
+    banner("NGL SPAMMER V1")
     input_username = input(f"{red}[{white}?{red}] {white}Nome utente del target : ")
     input_total_spam = input(f"{red}[{white}?{red}] {white}Numero dei messaggi da spammare : ")
     input_message = input(f"{red}[{white}?{red}] {white}Messaggio : ")
