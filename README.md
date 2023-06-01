@@ -1,4 +1,4 @@
-# Dedsec
+# **NGL SPAMMER**
  A free open source tool, that use a vulnerability in the **NGL** code. With this vulnerability the attacker can spam message with proxys
 
 # How to use?
