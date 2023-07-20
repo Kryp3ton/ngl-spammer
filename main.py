@@ -1,3 +1,5 @@
+#Importo le librerie
+
 from PyRoxy import Proxy, ProxyChecker, ProxyType, ProxyUtiles
 from requests import get, exceptions
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -26,6 +28,7 @@ CHUNK_PARRENT = 1
 with open(__dir__ / "config.json") as f:
     con = load(f)
 
+#definisco la classe del proxy menager
 class ProxyManager:
 
     @staticmethod
@@ -62,6 +65,7 @@ class ProxyManager:
                 pass
         return proxes
 
+#definisco la var randomProxy che serve a prendere  un proxy random
 def randomProxy():
     proxy_file = open("proxy.txt", "r").readlines()
     proxy_data = random.choice(proxy_file)
@@ -70,6 +74,7 @@ def randomProxy():
         "https": "http://" + proxy_data.replace("http://", "").replace("https://", "").strip()
     }
 
+#log time per capire l'ora dell attacco
 def logTime():
     now_utc = datetime.now(timezone('UTC'))
     now_pacific = now_utc.astimezone(timezone("Europe/Rome"))
@@ -86,6 +91,7 @@ def generateDeviceID():
     random_str = "".join(random.sample(string, 8))
     return random_str + "-6cfe-4156-ae34-268fadf064a3"
 
+#classe per l'inizio dello spam
 class SpamNGL:
 
     @staticmethod
@@ -127,6 +133,7 @@ class SpamNGL:
             except:
                 pass
 
+#creo un handler per la lista proxy 
 def handleProxyList(con, proxy_li, proxy_ty):
     if proxy_ty not in {4, 5, 1, 0, 6}:
         exit("Tipo socks non trovato [4, 5, 1, 0, 6]")
@@ -157,6 +164,9 @@ def handleProxyList(con, proxy_li, proxy_ty):
 
 if __name__ == '__main__':
     banner("NGL SPAMMER")
+    banner("created with ❤️ by Costantino Laico")
+    banner("if you have question: https://costantinolaico.it")
+    #definisco gli username i messaggi e thread
     input_username = input(f"{red}[{white}?{red}] {white}Nome utente del target : ")
     input_total_spam = input(f"{red}[{white}?{red}] {white}Numero dei messaggi da spammare : ")
     input_message = input(f"{red}[{white}?{red}] {white}Messaggio : ")
@@ -173,3 +183,23 @@ if __name__ == '__main__':
         proxy_li = Path(__dir__ / "proxy.txt")
         proxies = handleProxyList(con, proxy_li, 1)
         SpamNGL.starts(input_username, int(input_total_spam), int(input_thread), input_message)
+
+
+#                /|  /|  ---------------------------
+#                ||__||  |                         |
+#               /   O O\__  This tool was created  |
+#              /          \  by Costantino Laico   |
+#             /      \     \         ❤️⚡         |
+#            /   _    \     \ ----------------------
+#           /    |\____\     \      ||
+#          /     | | | |\____/      ||
+#         /       \| | | |/ |     __||
+#        /  /  \   -------  |_____| ||
+#       /   |   |           |       --|
+#       |   |   |           |_____  --|
+#       |  |_|_|_|          |     \----
+#       /\                  |
+#      / /\        |        /
+#     / /  |       |       |
+# ___/ /   |       |       |
+#|____/    c_c_c_C/ \C_c_c_c
